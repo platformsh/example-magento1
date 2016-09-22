@@ -40,10 +40,10 @@ mounts:
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
-        /usr/bin/php /app/magento-build.php
+        /usr/bin/php ./magento-build.php
     # We run deploy hook after your application has been deployed and started.
     deploy: |
-        /usr/bin/php /app/magento-deploy.php
+        /usr/bin/php ./magento-deploy.php
 # Default Magento cron job
 crons:
     mymagento:
