@@ -10,7 +10,7 @@ class Platformsh
     // This is the Magento root
     protected $webRoot = 'web';
 
-    protected $debugMode = FALSE;
+    protected $debugMode = TRUE;
 
     protected $platformReadWriteDirs = ['var', 'app/etc', 'media'];
 
