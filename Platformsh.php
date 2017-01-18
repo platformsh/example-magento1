@@ -111,7 +111,7 @@ class Platformsh
             $this->log(sprintf('Copied directory: %s', $dir));
         }
 
-        if (!file_exists('web/app/etc/local.xml')) {
+        if (!file_exists("{$this->webRoot}/app/etc/local.xml")) {
             $this->installMagento();
         } else {
             $this->updateMagento();
