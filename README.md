@@ -1,6 +1,6 @@
 # Magento 1 Community Edition template for Platform.sh
 
-This project provides a starter kit for Magento 1 Community Edition projects hosted on Platform.sh.  It is the recommended way to start a Magneto 1 project on Platform.sh.
+This project provides a starter kit for Magento 1 Community Edition projects hosted on Platform.sh.  It is the recommended way to start a Magento 1 project on Platform.sh.
 
 ## Starting a new project
 
