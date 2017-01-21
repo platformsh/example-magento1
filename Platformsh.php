@@ -9,7 +9,10 @@ class Platformsh
 
     // This is the Magento root
     protected $webRoot = 'web';
-
+    // $debugMode provides a wealth of helpful logging that prints to std out
+    // during the build phase and the deploy log during deploy.  None of this
+    // is accessible to the outside world, but of course feel free to 
+    // set this for FALSE once you get your project set up.
     protected $debugMode = TRUE;
 
     protected $platformReadWriteDirs = ['var', 'app/etc', 'media'];
