@@ -131,18 +131,17 @@ class Platformsh
         $this->initRoutes();
 
         $relationships = $this->getRelationships();
-        $var = $this->getVariables();
 
         $this->dbHost = $relationships["database"][0]["host"];
         $this->dbName = $relationships["database"][0]["path"];
         $this->dbUser = $relationships["database"][0]["username"];
         $this->dbPassword = $relationships["database"][0]["password"];
 
-        $this->adminUsername = isset($var["ADMIN_USERNAME"]) ? $var["ADMIN_USERNAME"] : "admin";
-        $this->adminFirstname = isset($var["ADMIN_FIRSTNAME"]) ? $var["ADMIN_FIRSTNAME"] : "John";
-        $this->adminLastname = isset($var["ADMIN_LASTNAME"]) ? $var["ADMIN_LASTNAME"] : "Doe";
-        $this->adminEmail = isset($var["ADMIN_EMAIL"]) ? $var["ADMIN_EMAIL"] : "john@example.com";
-        $this->adminPassword = isset($var["ADMIN_PASSWORD"]) ? $var["ADMIN_PASSWORD"] : "admin12";
+        $this->adminUsername = isset($_ENV["ADMIN_USERNAME"]) ? $_ENV["ADMIN_USERNAME"] : "admin";
+        $this->adminFirstname = isset($_ENV["ADMIN_FIRSTNAME"]) ? $_ENV["ADMIN_FIRSTNAME"] : "John";
+        $this->adminLastname = isset($_ENV["ADMIN_LASTNAME"]) ? $_ENV["ADMIN_LASTNAME"] : "Doe";
+        $this->adminEmail = isset($_ENV["ADMIN_EMAIL"]) ? $_ENV["ADMIN_EMAIL"] : "john@example.com";
+        $this->adminPassword = isset($_ENV["ADMIN_PASSWORD"]) ? $_ENV["ADMIN_PASSWORD"] : "admin12";
 
         $this->redisHost = $relationships['redis'][0]['host'];
         $this->redisScheme = $relationships['redis'][0]['scheme'];
@@ -172,16 +171,6 @@ class Platformsh
     protected function getRelationships()
     {
         return json_decode(base64_decode($_ENV["PLATFORM_RELATIONSHIPS"]), true);
-    }
-
-    /**
-     * Get custom variables from Platform.sh environment variable.
-     *
-     * @return mixed
-     */
-    protected function getVariables()
-    {
-        return json_decode(base64_decode($_ENV["PLATFORM_VARIABLES"]), true);
     }
 
     /**

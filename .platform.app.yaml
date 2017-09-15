@@ -51,8 +51,9 @@ crons:
         cmd: "cd public ; sh cron.sh"
 
 #variables:
-#    ADMIN_USERNAME: 'admin'
-#    ADMIN_FIRSTNAME: 'Magento'
-#    ADMIN_LASTNAME: 'PlatformSh'
-#    ADMIN_EMAIL: 'magento@platform.sh'
-#    ADMIN_PASSWORD: 'platform1'
+#    env:
+#        ADMIN_USERNAME: 'admin'
+#        ADMIN_FIRSTNAME: 'Magento'
+#        ADMIN_LASTNAME: 'PlatformSh'
+#        ADMIN_EMAIL: 'magento@platform.sh'
+#        ADMIN_PASSWORD: 'platform1'
