@@ -20,7 +20,7 @@
  *
  * @category    design
  * @package     default_default
- * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 
@@ -58,8 +58,10 @@
                                 <label for="login">
                                     <em class="required">*</em>&nbsp;<?php echo $this->__('Password') ?>
                                 </label>
+                                <!-- This is a dummy hidden field to trick firefox from auto filling the password -->
+                                <input type="password" class="input-text no-display" name="dummy" id="dummy" />
                                 <input type="password" id="login" name="login[password]" class="required-entry input-text"
-                                       value=""/></div>
+                                       value="" autocomplete="new-password"/></div>
                             <div class="clear"></div>
                             <div class="form-buttons">
                                 <button type="submit" class="form-button"
