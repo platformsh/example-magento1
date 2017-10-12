@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Paypal
- * @copyright  Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -715,6 +715,16 @@ class Mage_Paypal_Model_Config
             $this->sandboxFlag ? 'sandbox.' : '',
             $params ? '?' . http_build_query($params) : ''
         );
+    }
+
+    /**
+     * Get postback endpoint URL.
+     *
+     * @return string
+     */
+    public function getPostbackUrl()
+    {
+        return sprintf('https://ipnpb.%spaypal.com/cgi-bin/webscr', $this->sandboxFlag ? 'sandbox.' : '');
     }
 
     /**
@@ -1588,4 +1598,3 @@ class Mage_Paypal_Model_Config
         return Mage::getStoreConfig('payment/paypal_express_bml/'.$section.'_size', $this->_storeId);
     }
 }
-

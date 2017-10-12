@@ -20,7 +20,7 @@
  *
  * @category    Varien
  * @package     Varien_File
- * @copyright  Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -271,7 +271,7 @@ class Varien_File_Uploader
         //run validate callbacks
         foreach ($this->_validateCallbacks as $params) {
             if (is_object($params['object']) && method_exists($params['object'], $params['method'])) {
-                $params['object']->$params['method']($this->_file['tmp_name']);
+                $params['object']->{$params['method']}($this->_file['tmp_name']);
             }
         }
     }

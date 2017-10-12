@@ -20,7 +20,7 @@
  *
  * @category    Mage
  * @package     Mage_Admin
- * @copyright  Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @copyright  Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
  * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
 
@@ -640,8 +640,8 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
             return true;
         }
 
-        $dayDifference = floor(($currentTimestamp - $tokenTimestamp) / (24 * 60 * 60));
-        if ($dayDifference >= $tokenExpirationPeriod) {
+        $hoursDifference = floor(($currentTimestamp - $tokenTimestamp) / (60 * 60));
+        if ($hoursDifference >= $tokenExpirationPeriod) {
             return true;
         }
 
@@ -665,7 +665,7 @@ class Mage_Admin_Model_User extends Mage_Core_Model_Abstract
     /**
      * Simple sql format date
      *
-     * @param string $format
+     * @param string | boolean $dayOnly
      * @return string
      */
     protected function _getDateNow($dayOnly = false)
