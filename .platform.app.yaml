@@ -48,7 +48,7 @@ hooks:
 crons:
     mymagento:
         spec: "*/1 * * * *"
-        cmd: "cd public ; sh cron.sh"
+        cmd: "cd web ; sh cron.sh"
 
 #variables:
 #    env:
